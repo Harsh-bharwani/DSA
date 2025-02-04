@@ -11,10 +11,8 @@ int f(int n)
     return dp[n];
 }
 
-int main()
+int fibonacci(int n)
 {
-    int n;
-    cin>>n;
     dp.resize(n+1);
     for (int i = 0; i <= n; i++) {
         dp[i]=-1;    
