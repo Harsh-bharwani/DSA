@@ -13,9 +13,6 @@ int f(int n)
 
 int fibonacci(int n)
 {
-    dp.resize(n+1);
-    for (int i = 0; i <= n; i++) {
-        dp[i]=-1;    
-    }
+    dp.resize(n+1, -1);
     return f(n);
 }
