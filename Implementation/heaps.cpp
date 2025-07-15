@@ -15,7 +15,7 @@ struct MinHeap{
     int getMin(){
         return v[0];
     }
-
+    
     void insert(int x){
         int i=v.size();
         v.push_back(x);
@@ -28,6 +28,11 @@ struct MinHeap{
             }
             else break;
         }
+    }
+    template<typename... harsh>
+    void insert(int x, harsh... args){
+        insert(x);
+        insert(args...);
     }
 
     void deleteMin(){
@@ -46,9 +51,20 @@ struct MinHeap{
             else break;
         }
     }
-
+    void printMinHeap(){
+        int n=v.size();
+        for(int i=0;i<n;i++){
+            if(i==0) cout<<v[i]<<'\n';
+            if(2*i+1<n) cout<<v[2*i+1]<<' ';
+            if(2*i+2<n) cout<<v[2*i+2]<<'\n';
+        }
+    }
 };
 
 int main(){
-    
+    MinHeap mh;
+    // cout<<mh.getSize();
+    mh.insert(1,5,7,2,-1,3);
+    // cout<<mh.getSize();
+    mh.printMinHeap();
 }
